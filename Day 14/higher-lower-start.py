@@ -1,105 +1,41 @@
-import random
-from replit import clear
+
 
 # TODO-1: Import the logo
-from art import logo
-print(logo)
+
+
 
 #TODO-2: Import the data from game_data, and randomly select a specific dictionary in the data.
-from game_data import data
-
-def choice_a():
-    """This function is supposed to select and output a random celebritys' name, description and country"""
-    random_index = random.randint(0,len(data)-1)
-
-    random_list_item = data[random_index]
-
-    name = random_list_item['name']
-    followers_a = random_list_item['follower_count']
-    description = random_list_item['description']
-    country = random_list_item['country']
-
-    print(f"Compare A: {name}, {description}, {country}")
-
-    return followers_a
-    
-def choice_b():
-    """This function is supposed to select and output a random celebritys' name, description and country"""
-    random_index = random.randint(0,len(data)-1)
-
-    random_list_item = data[random_index]
-
-    name = random_list_item['name']
-    followers_b = random_list_item['follower_count']
-    description = random_list_item['description']
-    country = random_list_item['country']
-
-    print(f"Compare B: {name}, {description}, {country}")
-
-    return followers_b
+#Create a  function to generate a random person
 
 
-#TODO-3: Display the output of the generated dictionary in the format Compare A: "name", "description", "country" . 
-followers_a = choice_a()
-print(followers_a)
+#TODO-3: Display the random person and output it in the format Compare A: "name", "description", "country" . 
+
 
 #TODO-4: Import and print the "vs" art
-from art import vs
-print(vs)
-
-#TODO-5: Display the output of the generated dictionary in the format Compare B: "name", "description", "country" . 
-followers_b = choice_b()
-print(followers_b)
-
-#TODO-6: Print "Who has more followers? Type 'A' or 'B': " and get input from the user. 
-users_choice = input("Who has more followers? Type 'A' or 'B': ").upper()
-
-#TODO-7: a)Check the input from the user and if during the comparison, the user choses the celebrity with the most followers in instagram, add 1 point to the "users_score" and use the celebrity as "Compare A" and generate another random dictionary and display it as "Compare B". b)Else if the users choice is incorrect, print out "Sorry, that's wrong. Final score: {users_score}" and end the game there.
-
-FOLLOWER_A = followers_a
-FOLLOWER_B = followers_b
-users_score = 0
-
-def check_a():
-    if FOLLOWER_A > FOLLOWER_B:
-        print("You get an extra score")
-        # users_score += 1
-        B = choice_b()
-        print(B)
 
 
-def check_b():
-    if FOLLOWER_B > FOLLOWER_A :
-        print("You get an extra score")
-        # users_score += 1
-        A = choice_a()
-        print(A)
+#TODO-5: Display the random person and output it in the format Compare B: "name", "description", "country" . 
+
+#Ensure that compare A is not the same as compare B
+
+#TODO-6: Print the line "Who has more followers? Type 'A' or 'B': " and get input from the user. 
+
+#Ensure that no matter what case the user inputs, that it will not bring an error.
 
 
-#TODO-8: Repeat step 7a until the user gets an incorrect answer.
-end_game = False
+#TODO-7: a)Check the input from the user against the followers and if the user choses the celebrity with the most followers in instagram, add 1 point to the "users_score" 
+#Then use the celebrity with the most followers and use it as Compare A
+#Generate a random celebrity and use them as Compare B
 
-while not end_game:
-    if users_choice == 'A':
-        check_a()
-        users_score += 1
-        end_game = True 
-        print(F"Final score: {users_score}")
+#If the users choice is incorrect, print out "Sorry, that's wrong. Final score: {users_score}" and end the game there.
 
-    elif users_choice == 'B':
-        check_b() 
-        users_score += 1
-        end_game = True  
-        print(F"Final score: {users_score}")    
 
-    elif FOLLOWER_A == FOLLOWER_B:
-        print("You got it, continue playing")
-        users_score += 1
-        print(F"Final score: {users_score}")
-    else:
-        print("Invalid input try again!")
-        end_game = True
-        print(F"Sorry, that's wrong. Final score: {users_score}")
+
+#TODO-8: Repeat step above clearing the screen and updating the celebrities until the user gets an incorrect answer.
+#Use a negated while loop to achieve the game restart effect
+#Use the clear function from replit to clear the screen
+#End the game by returning true to the negated while loop
+
 
 
 
