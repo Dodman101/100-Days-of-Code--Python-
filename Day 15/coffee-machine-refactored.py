@@ -51,50 +51,48 @@ def make_coffee():
     global coffee
     global milk
     global money
-    global water_left
-    global coffee_left
-    global milk_left
-    global money_made
+
 
     make_coffee == True
     while make_coffee:
         if user_input == "espresso" and monetary_value >= espresso_cost:
-            water_left = water - espresso_required_water
-            coffee_left = coffee - espresso_required_coffee
+            water -= espresso_required_water
+            coffee -= espresso_required_coffee
             milk_left = milk
-            money_made = money + espresso_cost
+            money += espresso_cost
             #Once all resources have been deducted, tell the user "Here is your espresso☕. Enjoy!" .
                 #! If espresso was their choice of drink.
             print(f"Here is your espresso☕. Enjoy!")
         elif user_input == "latte" and monetary_value >= latte_cost:
-            water_left = water - latte_required_water
-            coffee_left = coffee - latte_required_coffee
-            milk_left = milk - latte_required_milk
-            money_made = money + latte_cost
+            water -= latte_required_water
+            coffee -= latte_required_coffee
+            milk -= latte_required_milk
+            money += latte_cost
             #Once all resources have been deducted, tell the user "Here is your latte☕. Enjoy!" .
                 #! If latte was their choice of drink.
             print(f"Here is your latte☕. Enjoy!")
         elif user_input == "cappuccino" and monetary_value >= cappuccino_cost:
-            water_left = water - cappuccino_required_water
-            coffee_left = coffee - cappuccino_required_coffee
-            milk_left = milk - cappuccino_required_milk
-            money_made = money + cappuccino_cost
+            water -= cappuccino_required_water
+            coffee -= cappuccino_required_coffee
+            milk -= cappuccino_required_milk
+            money += cappuccino_cost
             #Once all resources have been deducted, tell the user "Here is your cappuccino☕. Enjoy!" .
                 #! If cappuccino was their choice of drink.
             print(f"Here is your cappuccino☕. Enjoy!")
         
-        return water_left, coffee_left, milk_left, money_made
+        return water, milk, coffee, money
 
 money = 0
+water = resources['water']
+milk = resources['milk']
+coffee = resources['coffee']
 
 machine_off = False
 
 while not machine_off:
 
     
-    water = resources['water']
-    milk = resources['milk']
-    coffee = resources['coffee']
+    
     espresso_cost = MENU["espresso"]["cost"]
     latte_cost = MENU["latte"]["cost"]
     cappuccino_cost = MENU["cappuccino"]["cost"]
@@ -123,8 +121,8 @@ while not machine_off:
     #? Coffee: 76g
     #? Money: $2.5
     elif user_input == "report":
-        report(water_left, milk_left, coffee_left, money_made)
-        machine_off = True 
+        report(water, milk, coffee, money)
+        # machine_off = True 
     
     
     elif user_input == "espresso" or user_input == "latte" or user_input == "cappuccino":
@@ -194,10 +192,9 @@ while not machine_off:
             #? Milk: 50ml
             #? Coffee: 76g
             #? Money: $2.5
-            water_left, milk_left, coffee_left, money_made = make_coffee()
-            print(water_left)
+            water, milk, coffee, money = make_coffee()
 
-            report(water_left, milk_left, coffee_left, money_made)
+            # report(water, milk, coffee, money)
     
     else:
         print("Invalid input!")
