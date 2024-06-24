@@ -52,7 +52,6 @@ def make_coffee():
     global milk
     global money
 
-
     make_coffee == True
     while make_coffee:
         if user_input == "espresso" and monetary_value >= espresso_cost:
@@ -89,10 +88,7 @@ coffee = resources['coffee']
 
 machine_off = False
 
-while not machine_off:
-
-    
-    
+while not machine_off:    
     espresso_cost = MENU["espresso"]["cost"]
     latte_cost = MENU["latte"]["cost"]
     cappuccino_cost = MENU["cappuccino"]["cost"]
