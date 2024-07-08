@@ -3,8 +3,8 @@
 ## Day 1.4 Variables Assignment
 
 # Don't change the code below
-a = input("a:")
-b = input("b:")
+a = input("a: ")
+b = input("b: ")
 # Don't change the code above
 
 ################################
@@ -20,4 +20,4 @@ b = c
 # Don't change the code below
 print("a = " + a)
 print("b = " + b)
-# Don't change the code above5
+# Don't change the code above

@@ -80,7 +80,7 @@ else:
     #Playing Logic
     if (human_choice == 0) and (computer_choice == 2):
         print("You win!")
-    elif (human_choice == 2) and (computer_choice == 0):
+    elif (human_choice == 1) and (computer_choice == 0):
         print("You win!")
     elif (human_choice == 2) and (computer_choice == 1):
         print("You win!")

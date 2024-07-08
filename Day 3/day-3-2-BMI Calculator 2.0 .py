@@ -10,10 +10,10 @@ weight = float(input("enter your weight in kg: "))
 #print(type(weight))
 
 ##Convert the strings to floats and perform the division
-bmi = round(weight / height ** 2)
+bmi = round(weight / (height ** 2))
 
 #Convert the BMI into an integer and print it 
-#print(int(bmi))
+# print(int(bmi))
 
 if bmi < 18.5 :
     print(f"Your BMI is {bmi} and you are underweight")

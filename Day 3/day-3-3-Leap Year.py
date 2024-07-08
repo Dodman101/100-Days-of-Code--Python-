@@ -15,7 +15,7 @@ year = int(input("Which year do you want to check? "))
 #* Layman's language: If the year is evenly divisible by 4 and divisible by 100 and also divisible by 400, it is considered to be a Leap Year.
 
 #*Write an If statement to check if (year % 4 == 0)
-#*Write another If statement in the same block to check if (year % 100 != 0)
+#*Write another If statement in the same block to check if (year % 100 == 0)
 #*Write another if statement in the same block to check if (year % 400 == 0)
 #*Print("Leap Year.")
 #*Else print("Not Leap Year")

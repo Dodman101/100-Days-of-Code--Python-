@@ -1,12 +1,12 @@
 # Don't change the code below
 print("Welcome to Python Pizza Deliveries!")
-size = input("What size pizza do you want? S,M,L : ")
-add_pepperoni = input("Do you want pepperoni? Y or N: ")
-extra_cheese = input("Do you want extra cheese? Y or N: ")
+size = input("What size pizza do you want? S,M,L : ").upper()
+add_pepperoni = input("Do you want pepperoni? Y or N: ").upper()
+extra_cheese = input("Do you want extra cheese? Y or N: ").upper()
 # Don't change the code above
 
 #Write your code below this line
-#TODO: Calculate the final bill of the user.abs
+#TODO: Calculate the final bill of the user. 
 
 bill = 0
 
